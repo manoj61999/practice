@@ -5,6 +5,7 @@ const router = express.Router();
 var controller = require("../controller/users/index");
 var product = require("../controller/product/index");
 var order = require("../controller/order/index")
+var calculator = require("../controller/calculator/index");
 
 
 
@@ -21,10 +22,12 @@ let routes = (app) => {
 
   router.post("/Order",order.Order);
   router.post("/OrderDetails",order.OrderDetails);
-  router.get("/OrderReview",order.OrderReview)
+  router.get("/OrderReview",order.OrderReview);
 
-
-
+  router.post("/Addition",calculator.Addition);
+  router.post("/subraction",calculator.Subraction);
+  router.post("/Multi",calculator.Multiplication);
+  router.post("/Division",calculator.Division);
 
   app.use("/api", router);
 };
